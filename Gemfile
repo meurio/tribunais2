@@ -29,3 +29,9 @@ gem 'rails_12factor', group: :production
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end
+
+group :test do
+  gem 'codeclimate-test-reporter', require: false
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+end
