@@ -1,3 +1,7 @@
+{<img src="https://travis-ci.org/meurio/tribunais2.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/meurio/tribunais2]
+{<img src="https://codeclimate.com/github/meurio/tribunais2.png" />}[https://codeclimate.com/github/meurio/tribunais2]
+{<img src="https://codeclimate.com/github/meurio/tribunais2/coverage.png" />}[https://codeclimate.com/github/meurio/tribunais2]
+
 == README
 
 This README would normally document whatever steps are necessary to get the
