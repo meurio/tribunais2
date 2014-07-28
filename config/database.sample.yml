@@ -83,3 +83,6 @@ production:
   database: tribunais2_production
   username: tribunais2
   password: <%= ENV['TRIBUNAIS2_DATABASE_PASSWORD'] %>
+
+cucumber:
+  <<: *test
