@@ -1,6 +1,6 @@
-class CreateTasksUsers < ActiveRecord::Migration
+class CreateTaskAccomplishments < ActiveRecord::Migration
   def change
-    create_table :tasks_users do |t|
+    create_table :task_accomplishments do |t|
       t.integer :user_id, foreign_key: false
       t.integer :task_id
 

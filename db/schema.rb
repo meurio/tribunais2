@@ -39,13 +39,13 @@ ActiveRecord::Schema.define(version: 20140729173907) do
     t.index ["index"], :name => "index_tasks_on_index"
   end
 
-  create_table "tasks_users", force: true do |t|
+  create_table "task_accomplishments", force: true do |t|
     t.integer  "user_id"
     t.integer  "task_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["task_id"], :name => "fk__tasks_users_task_id"
-    t.foreign_key ["task_id"], "tasks", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_tasks_users_task_id"
+    t.index ["task_id"], :name => "fk__task_accomplishments_task_id"
+    t.foreign_key ["task_id"], "tasks", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_task_accomplishments_task_id"
   end
 
   create_table "users", force: true do |t|

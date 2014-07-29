@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :tasks do
-    resources :tasks_users
+    resources :task_accomplishments
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

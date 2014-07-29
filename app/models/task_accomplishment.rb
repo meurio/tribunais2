@@ -1,8 +1,12 @@
-class TasksUser < ActiveRecord::Base
+class TaskAccomplishment < ActiveRecord::Base
   after_create { self.delay.add_to_accounts_segment }
   after_create { AppMailer.delay.poke_gilmar_mendes(self) }
 
   belongs_to :user
+  belongs_to :task
+
+  validates :user_id, :task_id, presence: true
+  validates :user_id, uniqueness: { scope: :task_id }
 
   accepts_nested_attributes_for :user
 
