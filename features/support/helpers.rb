@@ -3,11 +3,11 @@ def to_route string
   raise "I don't know route '#{string}'"
 end
 
-def to_element string
-  return "tasks_users[user][first_name]" if string == "the first name field"
-  return "tasks_users[user][last_name]" if string == "the last name field"
-  return "tasks_users[user][email]" if string == "the email field"
-  raise "I don't know element '#{string}'"
+def to_field string
+  return "tasks_user_user_attributes_first_name" if string == "the first name field"
+  return "tasks_user_user_attributes_last_name" if string == "the last name field"
+  return "tasks_user_user_attributes_email" if string == "the email field"
+  raise "I don't know field '#{string}'"
 end
 
 def to_button string
