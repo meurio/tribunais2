@@ -10,7 +10,7 @@ Feature: poke Gilmar Mendes
     And I fill "the email field" with "nicolas@trashmail.com"
     When I press "the poke Gilmar Mendes submit button"
     Then I should be in "the homepage"
-    And my email to Gilmar Mendes should be sent
+    And an email from "nicolas@trashmail.com" to Gilmar Mendes should be sent
     And I should see "poke Rodrigo Janot" task
 
   Scenario: when it's an existing user
