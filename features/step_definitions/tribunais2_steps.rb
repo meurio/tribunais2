@@ -13,3 +13,7 @@ end
 Given(/^there is a task for poke Gilmar Mendes$/) do
   Task.create! index: 1
 end
+
+Given(/^there is an user with email "(.*?)"$/) do |arg1|
+  User.create! email: arg1
+end

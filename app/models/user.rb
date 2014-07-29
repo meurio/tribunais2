@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  validates :email, uniqueness: true
+
   def self.create params
     if Rails.env.production? || Rails.env.staging?
       begin
