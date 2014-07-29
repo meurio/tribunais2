@@ -1,12 +1,15 @@
 doctype html
 html
   head
-    title Tribunais2
+    title Desmilitarização da Justiça
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
-  body
+  body class=[controller.controller_name, controller.action_name]
     p= "Usuário: #{current_user.email}" if current_user
     = render 'layouts/flash', locals: { flash: flash } unless flash.empty?
     = yield
+    = javascript_include_tag "application"

@@ -1,11 +1,13 @@
-- if current_user.nil?
-  #poke_gilmar_mendes
-    = form_for [@task, @task_accomplishment] do |f|
-      = f.fields_for :user do |user_form|
-        = user_form.text_field :first_name
-        = user_form.text_field :last_name
-        = user_form.email_field :email
-      = f.submit "Pressionar!", id: :poke_gilmar_mendes_button
+.tasks
+  .row
+    - if current_user.nil?
+      .task#poke_gilmar_mendes
+        = form_for [@task, @task_accomplishment] do |f|
+          = f.fields_for :user do |user_form|
+            = user_form.text_field :first_name
+            = user_form.text_field :last_name
+            = user_form.email_field :email
+          = f.submit "Pressionar!", id: :poke_gilmar_mendes_button
 
-- else
-  #poke_rodrigo_janot
+    - else
+      .task#poke_rodrigo_janot

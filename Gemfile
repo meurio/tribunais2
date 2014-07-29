@@ -28,6 +28,7 @@ gem 'rails_12factor', group: :production
 gem 'schema_plus'
 gem 'delayed_job_active_record'
 gem 'slim-rails'
+gem 'foundation-rails'
 
 # test
 group :development, :test do
