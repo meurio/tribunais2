@@ -13,7 +13,7 @@ class TasksUser < ActiveRecord::Base
       body = {
         token: ENV["ACCOUNTS_API_TOKEN"],
         segment_subscription: {
-          organization_id: Organization.find_by_slug('meurio').id,
+          organization_id: ENV['MEURIO_ORGANIZATION_ID'],
           segment_id: self.task.mailchimp_list_uid
         }
       }
