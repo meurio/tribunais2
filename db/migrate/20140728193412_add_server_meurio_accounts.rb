@@ -16,7 +16,7 @@ class AddServerMeurioAccounts < ActiveRecord::Migration
       OPTIONS (
         dbname  '#{ENV["MEURIO_ACCOUNTS_DBNAME"]}',
         host    '#{ENV["MEURIO_ACCOUNTS_DBHOST"]}',
-        port    '#{ENV["MEURIO_ACCOUNTS_DBPORT"]}',
+        port    '#{ENV["MEURIO_ACCOUNTS_DBPORT"]}'
       );
 
       CREATE USER MAPPING for #{ENV["DB_USERNAME"]}
