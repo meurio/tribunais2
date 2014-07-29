@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
       if session[:user_id] = User.find_by(email: params[:login_email]).try(:id)
         redirect_to root_path
       else
-        redirect_to root_path, notice: 'O usuário não foi encontrado'
+        redirect_to root_path, alert: 'O usuário não foi encontrado'
       end
     end
   end
