@@ -5,7 +5,7 @@ class AddServerMeurioAccounts < ActiveRecord::Migration
       raise "MEURIO_ACCOUNTS_DBHOST is missing" if ENV["MEURIO_ACCOUNTS_DBHOST"].nil?
       raise "MEURIO_ACCOUNTS_DBUSER is missing" if ENV["MEURIO_ACCOUNTS_DBUSER"].nil?
       raise "MEURIO_ACCOUNTS_DBPASS is missing" if ENV["MEURIO_ACCOUNTS_DBPASS"].nil?
-      raise "MEURIO_ACCOUNTS_DBPASS is missing" if ENV["MEURIO_ACCOUNTS_DBPORT"].nil?
+      raise "MEURIO_ACCOUNTS_DBPORT is missing" if ENV["MEURIO_ACCOUNTS_DBPORT"].nil?
       raise "DB_USERNAME is missing" if ENV["DB_USERNAME"].nil?
 
       execute <<-SQL
