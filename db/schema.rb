@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729125023) do
+ActiveRecord::Schema.define(version: 20140729141212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20140729125023) do
     t.string   "mailchimp_list_uid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "index",              null: false
+    t.index ["index"], :name => "index_tasks_on_index"
   end
 
   create_table "tasks_users", force: true do |t|
