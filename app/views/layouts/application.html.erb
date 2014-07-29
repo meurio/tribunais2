@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%= render 'layouts/flash', locals: { flash: flash } unless flash.empty? %>
+
 <%= yield %>
 
 </body>
