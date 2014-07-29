@@ -1,10 +1,10 @@
 class TasksUsers < ActiveRecord::Base
-  before_create :add_to_accounts_segment
+  after_create { self.delay.add_to_accounts_segment }
 
   def add_to_accounts_segment
     begin
       url = "#{ENV["ACCOUNTS_HOST"]}/users/#{self.user_id}/segment_subscriptions.json"
-      
+
       body = {
         token: ENV["ACCOUNTS_API_TOKEN"],
         segment_subscription: {

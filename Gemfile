@@ -26,6 +26,7 @@ gem 'spring', group: :development
 gem 'rails_12factor', group: :production
 
 gem 'schema_plus'
+gem 'delayed_job_active_record'
 
 # test
 group :development, :test do
