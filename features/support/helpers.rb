@@ -4,9 +4,9 @@ def to_route string
 end
 
 def to_field string
-  return "tasks_user_user_attributes_first_name" if string == "the first name field"
-  return "tasks_user_user_attributes_last_name" if string == "the last name field"
-  return "tasks_user_user_attributes_email" if string == "the email field"
+  return "task_accomplishment_user_attributes_first_name" if string == "the first name field"
+  return "task_accomplishment_user_attributes_last_name" if string == "the last name field"
+  return "task_accomplishment_user_attributes_email" if string == "the email field"
   raise "I don't know field '#{string}'"
 end
 

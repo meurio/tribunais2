@@ -1,4 +1,4 @@
-class TasksUser < ActiveRecord::Base
+class TaskAccomplishment < ActiveRecord::Base
   after_create { self.delay.add_to_accounts_segment }
   after_create { AppMailer.delay.poke_gilmar_mendes(self) }
 
