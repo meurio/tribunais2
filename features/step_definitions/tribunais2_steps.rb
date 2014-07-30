@@ -11,7 +11,7 @@ Then(/^I should see "(.*?)" task$/) do |arg1|
 end
 
 Given(/^there is a task for poke Gilmar Mendes$/) do
-  Task.create! index: 1, mailchimp_list_uid: "123"
+  Task.create! index: 1, mailchimp_list_uid: "123", name: "Task name"
 end
 
 Given(/^there is an user with email "(.*?)"$/) do |arg1|
