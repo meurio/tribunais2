@@ -35,3 +35,11 @@ Feature: poke Gilmar Mendes
     Then I should be in "the homepage"
     And an email from "nicolas@trashmail.com" to Gilmar Mendes should be sent just once
     And I should see "poke Rodrigo Janot" task
+
+  @javascript
+  Scenario: when the form contains errors
+    Given I'm in "the homepage"
+    When I press "the poke Gilmar Mendes submit button"
+    Then I should see "the first name field error"
+    And I should see "the last name field error"
+    And I should see "the email field error"

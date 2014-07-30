@@ -13,3 +13,7 @@ end
 Then(/^I should be in "(.*?)"$/) do |arg1|
   expect(current_path).to match to_route(arg1)
 end
+
+Then(/^I should see "(.*?)"$/) do |arg1|
+  expect(page).to have_css(to_element(arg1))
+end
