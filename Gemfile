@@ -39,6 +39,7 @@ end
 group :test do
   gem 'codeclimate-test-reporter', require: false
   gem 'cucumber-rails', require: false
+  gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'fabrication'
 end
