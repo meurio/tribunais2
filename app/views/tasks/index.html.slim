@@ -1,6 +1,11 @@
 .tasks
   .row
     - if current_user.nil?
+      .tasks-menu
+        span.tasks-menu-title Minhas missões
+        ul
+          - @tasks.each do |task|
+            li= task.name
       .task#poke_gilmar_mendes
         = form_for [@task, @task_accomplishment], data: { abide: true } do |f|
           = f.fields_for :user do |user_form|

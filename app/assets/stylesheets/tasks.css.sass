@@ -3,5 +3,24 @@
 // You can use Sass here: http://sass-lang.com/
 
 body.tasks.index
+  .tasks-menu
+    +grid-column(4)
+    span.tasks-menu-title
+      background: $blue
+      display: block
+      padding: 1em
+      font-size: 1.5em
+      text-align: center
+      color: $gray
+      font-weight: bold
+    ul
+      background: $gray
+      color: white
+      margin: 0
+      padding: 2em
+      li
+        list-style: none
+        font-size: 1.2em
+        line-height: normal
   .task
-    +grid-column(12)
+    +grid-column(8)
