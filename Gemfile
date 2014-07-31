@@ -29,6 +29,7 @@ gem 'schema_plus'
 gem 'delayed_job_active_record'
 gem 'slim-rails'
 gem 'foundation-rails'
+gem 'httparty'
 
 # test
 group :development, :test do
