@@ -1,24 +1,39 @@
 .tasks
   .row
+    .tasks-menu
+      span.tasks-menu-title Minhas missões
+      ul
+        - @tasks.each do |task|
+          li#poke_gilmar_mendes class=task_button_class(task, @accomplished_tasks)
+            span.mission= task.mission
+            span.name= task.name
     - if current_user.nil?
-      .tasks-menu
-        span.tasks-menu-title Minhas missões
-        ul
-          - @tasks.each do |task|
-            li= task.name
       .task#poke_gilmar_mendes
-        = form_for [@task, @task_accomplishment], data: { abide: true } do |f|
+        .briefing
+          .mission-type.icon-mail2
+            span= @current_task.mission
+          h2= @current_task.name
+          p O ministro do STF Gilmar Mendes, relator da ADPF 289, é o responsável pela análise mais detalhada do processo e pelo primeiro voto. Ou seja: é fundamental que ele saiba desde já que a sociedade quer o fim do julgamento de civis por tribunais militares.
+        = form_for [@current_task, @task_accomplishment], data: { abide: true } do |f|
           = f.fields_for :user do |user_form|
             .first-name-field
+              = user_form.label(:first_name)
               = user_form.text_field(:first_name, required: true)
               small.error Nome é obrigatório
             .last-name-field
+              = user_form.label(:last_name)
               = user_form.text_field(:last_name, required: true)
               small.error Sobrenome é obrigatório
             .email-field
+              = user_form.label(:email)
               = user_form.email_field(:email, required: true)
               small.error Email é obrigatório
-          = f.submit "Pressionar!", id: :poke_gilmar_mendes_button, class: [:button, :radius]
+          .submit-field
+            = f.submit "Enviar email", id: :poke_gilmar_mendes_button, class: [:button, :radius, :large]
+            = link_to "Quero ver o email", "#", data: { "reveal-id" => "poke_gilmar_mendes_mail" }
+          #poke_gilmar_mendes_mail.reveal-modal.medium data={reveal: true}
+            = render partial: "share/poke_gilmar_mendes_mail"
+            a.close-reveal-modal &#215;
 
     - else
       .task#poke_rodrigo_janot

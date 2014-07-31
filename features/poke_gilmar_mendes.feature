@@ -12,6 +12,7 @@ Feature: poke Gilmar Mendes
     Then I should be in "the homepage"
     And an email from "nicolas@trashmail.com" to Gilmar Mendes should be sent just once
     And I should see "poke Rodrigo Janot" task
+    And I should see "the poke Gilmar Mendes" task accomplished
 
   Scenario: when it's an existing user
     Given there is an user with email "nicolas@trashmail.com"
@@ -23,6 +24,7 @@ Feature: poke Gilmar Mendes
     Then I should be in "the homepage"
     And an email from "nicolas@trashmail.com" to Gilmar Mendes should be sent just once
     And I should see "poke Rodrigo Janot" task
+    And I should see "the poke Gilmar Mendes" task accomplished
 
   Scenario: when the user already poked Gilmar Mendes
     Given there is an user with email "nicolas@trashmail.com"
@@ -35,6 +37,7 @@ Feature: poke Gilmar Mendes
     Then I should be in "the homepage"
     And an email from "nicolas@trashmail.com" to Gilmar Mendes should be sent just once
     And I should see "poke Rodrigo Janot" task
+    And I should see "the poke Gilmar Mendes" task accomplished
 
   @javascript
   Scenario: when the form contains errors
