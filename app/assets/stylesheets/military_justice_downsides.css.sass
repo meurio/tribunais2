@@ -1,2 +1,14 @@
 .military_justice_downsides
   background: $blue
+  h2
+    color: $gray
+    text-align: center
+  .downside
+    +grid-column(3)
+    .image
+      margin: 0 auto
+      max-width: 219px
+
+  @media #{$small-only}
+    .downside
+      +grid-column(12)
