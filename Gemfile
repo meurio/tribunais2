@@ -30,6 +30,7 @@ gem 'delayed_job_active_record'
 gem 'slim-rails'
 gem 'foundation-rails'
 gem 'httparty'
+gem 'compass-rails'
 
 # test
 group :development, :test do
