@@ -42,4 +42,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'fabrication'
+  gem 'shoulda-matchers', require: false
 end
