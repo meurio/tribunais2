@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
+  has_many :task_accomplishments
+  has_many :tasks, through: :task_accomplishments
+
+  # TODO: move this method to a gem
   def self.create params
     if Rails.env.production? || Rails.env.staging?
       begin
