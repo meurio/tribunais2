@@ -1,13 +1,22 @@
 .military_justice_downsides
   background: $blue
+  padding: 3em 0
   h2
     color: $gray
     text-align: center
   .downside
+    text-align: center
+    color: white
+    line-height: normal
     +grid-column(3)
     .image
       margin: 0 auto
+      margin-bottom: .5em
       max-width: 219px
+    .downside-name
+      font-size: 1.5em
+      color: $gray
+      font-weight: bold
 
   @media #{$small-only}
     .downside
