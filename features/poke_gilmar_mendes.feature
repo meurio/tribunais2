@@ -1,7 +1,7 @@
 Feature: poke Gilmar Mendes
 
   Background:
-    Given there is a task for poke Gilmar Mendes
+    Given 1 task
 
   Scenario: when it's a new user
     Given I'm in "the homepage"
@@ -15,7 +15,8 @@ Feature: poke Gilmar Mendes
     And I should see "the poke Gilmar Mendes" task accomplished
 
   Scenario: when it's an existing user
-    Given there is an user with email "nicolas@trashmail.com"
+    Given the following user:
+      | email | nicolas@trashmail.com |
     Given I'm in "the homepage"
     And I fill "the first name field" with "Nícolas"
     And I fill "the last name field" with "Iensen"
@@ -27,7 +28,8 @@ Feature: poke Gilmar Mendes
     And I should see "the poke Gilmar Mendes" task accomplished
 
   Scenario: when the user already poked Gilmar Mendes
-    Given there is an user with email "nicolas@trashmail.com"
+    Given the following user:
+      | email | nicolas@trashmail.com |
     And this user already poked Gilmar Mendes
     And I'm in "the homepage"
     And I fill "the first name field" with "Nícolas"
