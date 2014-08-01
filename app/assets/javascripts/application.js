@@ -16,4 +16,19 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ 
+  $(document).foundation(); 
+
+  $(window).scroll(function(){
+    // fixed form
+    if(typeof scrollable_form_y === "undefined")
+      scrollable_form_y = $(".scrollable_form").position().top
+
+    console.log("window.scrollY: " + window.scrollY + ", scrollable_form_y: " + scrollable_form_y);
+    if(window.scrollY >= scrollable_form_y && $(document).width() > 735){
+      $(".form_wraper").addClass("fixed");
+    } else{
+      $(".form_wraper").removeClass("fixed");
+    }
+  });
+});
