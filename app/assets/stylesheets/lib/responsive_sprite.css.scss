@@ -44,3 +44,12 @@
   {@include responsive-sprite($sprites-sprites, partner-gtnm);}
 .sprites-partner-paporeto
   {@include responsive-sprite($sprites-sprites, partner-paporeto);}
+
+.sprites-steps-1-civil
+  {@include responsive-sprite($sprites-sprites, steps-1-civil);}
+.sprites-steps-4-militares
+  {@include responsive-sprite($sprites-sprites, steps-4-militares);}
+.sprites-steps-5-civis
+  {@include responsive-sprite($sprites-sprites, steps-5-civis);}
+.sprites-steps-10-militares
+  {@include responsive-sprite($sprites-sprites, steps-10-militares);}

@@ -1,0 +1,39 @@
+.steps
+  padding: 3em 0
+  background: $blue
+  text-align: center
+  color: white
+  .steps-title
+    +grid-column(12)
+    h2
+      color: $gray
+  span
+    color: $yellow
+    font-weight: bold
+  .step
+    +grid-column($columns: 10, $center: true)
+    .step-box
+      background: $dark-gray
+      padding: 1em 3em
+      margin-bottom: 1em
+      p
+        margin: 0
+    .step-text
+      +grid-column($columns: 7, $center: true)
+    .step-image
+      margin: 0 auto
+      margin-bottom: .5em
+      &.steps-1-civil
+        max-width: 59px
+      &.steps-4-militares
+        max-width: 249px
+      &.steps-10-militares
+        max-width: 644px
+      &.steps-5-civis
+        max-width: 319px
+
+  @media #{$small-only}
+    .step
+      +grid-column(12)
+      .step-text
+        +grid-column(12)
