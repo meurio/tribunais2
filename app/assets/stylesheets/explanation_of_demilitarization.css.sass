@@ -1,7 +1,6 @@
 .explanation_of_demilitarization
   padding: 2em 0
   background: asset-url("explanation-bg.jpg") top center
-  background-size: cover
   .title
     +grid-column(4)
   .text
@@ -79,14 +78,6 @@
         border: 1px solid $blue
 
   @media #{$medium-down}
-    .text, .title
-      +grid-column(12)
-      text-align: center
-    .title
-      h2, strong
-        margin-bottom: 1em
-    .counter
-      +grid-column($columns: 12, $offset: 0)
     form
       +grid-column(8, true, true)
       .first_name_field, .last_name_field, .email_field, .submit_button
