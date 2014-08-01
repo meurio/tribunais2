@@ -1,0 +1,39 @@
+.partners
+  background: $green
+  padding: 3em 0
+  text-align: center
+  color: white
+  a
+    color: $yellow
+    text-decoration: underline
+    font-weight: bold
+  h2
+    color: white
+  .partners-title
+    +grid-column(12)
+  .partner
+    +grid-column(2)
+    margin-bottom: 3em
+    &:first-child
+      +grid-column($columns: 2, $offset: 1)
+    .partner-image
+      margin: 0 auto
+      &.meurio
+        max-width: 77px
+      &.ddh, &.gtnm
+        max-width: 174px
+      &.dpq
+        max-width: 160px
+      &.paporeto
+        max-width: 231px
+  .read-more
+    +grid-column(12)
+    margin-top: 1em
+    p
+      margin-bottom: 0
+
+  @media #{$small-only}
+    .partner
+      +grid-column(12)
+      &:first-child
+        +grid-column($columns: 12, $offset: 0)

@@ -1,0 +1,16 @@
+.adpf
+  background: $blue
+  color: white
+  padding: 3em 0
+  .adpf-title
+    +grid-column(4)
+    text-align: right
+    h2
+      color: $gray
+  .adpf-text
+    +grid-column(8)
+
+  @media #{$medium-down}
+    .adpf-title, .adpf-text
+      +grid-column(12)
+      text-align: center
