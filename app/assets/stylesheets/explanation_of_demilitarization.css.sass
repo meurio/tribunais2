@@ -1,0 +1,56 @@
+.explanation_of_demilitarization
+  padding: 2em 0
+  background: asset-url("explanation-bg.jpg") top center
+  .title
+    +grid-column(4)
+  .text
+    +grid-column(8)
+  .title
+    text-align: right
+    h2
+      margin-bottom: 1em
+      color: $blue
+  .text
+    margin-bottom: 2em
+    p
+      color: white
+    strong
+      color: white
+      font-size: inherit
+      font-weight: bold
+      display: inline
+    .hash
+      color: $yellow
+      font-weight: bold
+      font-size: 1.1em
+  .counter
+    +grid-column($columns: 8, $offset: 4)
+    margin-bottom: 2em
+    .digits-and-text
+      text-align: left
+      .digits, .counter-text
+        display: inline-block
+      .digits
+        margin-right: .5em
+      span.digit
+        color: $yellow
+        text-align: center
+        background: asset-url("counter-bg.png")
+        margin-right: 2px
+        display: inline-block
+        width: 32px
+        line-height: 39px
+        font-weight: 900
+        font-size: 1.75em
+        &:last-child
+          margin-right: 0
+      .counter-text
+        text-transform: uppercase
+        line-height: 1em
+        text-align: left
+        color: $gray
+        font-size: 14px
+        font-weight: bold
+        span
+          position: relative
+          top: 3px

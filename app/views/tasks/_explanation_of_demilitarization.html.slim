@@ -1,0 +1,38 @@
+.explanation_of_demilitarization
+  .row
+    .counter
+      .digits-and-text
+        .digits
+          - TaskAccomplishment.count.to_s.chars.each do |c|
+            span.digit= c
+        .counter-text
+          span
+            | Pessoas pedindo a
+            br
+            | desmilitarização da justiça
+
+  .row
+    .title
+      h2 Você sabia que no Brasil você ainda pode ser julgado por um tribunal militar?
+    .text
+      p Apesar de vivermos em uma democracia,  qualquer cidadão civil pode virar reú da justiça militar, caso seja acusado de desacato ou outras formas de insubordinação contra membros das Forças Armadas.
+      p A boa notícia é que a Procuradoria Geral da República acaba de entrar com uma ação no Supremo Tribunal Federal para acabar com esse absurdo. E o voto do STF deve ocorrer ainda esse ano!
+      p Mas sabemos que os militares não querem abrir mão de seus privilégios, e já estão se movimentando para tentar influenciar os ministros do STF na semana do voto. É por isso que estamos unindo pessoas dispostas a orquestrar um contra-ataque.
+      p
+        | Juntos, vamos criar a maior mobilização pela desmilitarização da justiça que o Brasil já viu. Mobilizadores inscritos receberão um email com o plano da missão para pressionar os ministros do STF nas ruas e nas redes até a semana do voto. Venha fazer história junto com a gente!
+        span.hash  #DesmilitarizaçãodaJustiça
+
+  / .form_wraper
+    .row
+      / = form_for @poke, html: { "data-abide" => true } do |form|
+        .row
+          .first_name_field
+            = text_field_tag :first_name, nil, placeholder: "Insira seu nome", required: true
+          .last_name_field
+            = text_field_tag :last_name, nil, placeholder: "Insira seu sobrenome", required: true
+          .email_field
+            = email_field_tag :email, nil, placeholder: "Insira seu email", required: true
+          .submit_button
+            = form.submit "Inscreva-se", id: 'poke-submit-button', class: [:button, :radius]
+  .row
+    .divider= image_tag("divider-dark.png")
