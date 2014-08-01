@@ -53,3 +53,16 @@
   {@include responsive-sprite($sprites-sprites, steps-5-civis);}
 .sprites-steps-10-militares
   {@include responsive-sprite($sprites-sprites, steps-10-militares);}
+
+.sprites-ocupation-alemao
+  {@include responsive-sprite($sprites-sprites, ocupation-alemao);}
+.sprites-ocupation-events
+  {@include responsive-sprite($sprites-sprites, ocupation-events);}
+.sprites-ocupation-mare
+  {@include responsive-sprite($sprites-sprites, ocupation-mare);}
+.sprites-ocupation-providencia
+  {@include responsive-sprite($sprites-sprites, ocupation-providencia);}
+.sprites-ocupation-santo-amaro
+  {@include responsive-sprite($sprites-sprites, ocupation-santo-amaro);}
+.sprites-ocupation-strike
+  {@include responsive-sprite($sprites-sprites, ocupation-strike);}

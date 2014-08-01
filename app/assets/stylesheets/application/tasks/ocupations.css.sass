@@ -1,0 +1,26 @@
+.ocupations
+  padding: 3em 0
+  background: $dark-gray
+  color: white
+  .ocupations-title
+    text-align: right
+    +grid-column(4)
+    h2
+      color: $blue
+  .ocupations-text
+    +grid-column(8)
+  .ocupation
+    height: 575px
+    +grid-column(4)
+    .ocupation-image
+      margin: 0 auto
+      max-width: 219px
+
+  @media #{$small-only}
+    .ocupations-title, .ocupations-text
+      +grid-column(12)
+      text-align: center
+    .ocupation
+      +grid-column(12)
+      height: auto
+      margin-bottom: 4em
