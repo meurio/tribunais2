@@ -24,11 +24,23 @@
   );
 }
 
-.sprites-unproductive
-  {@include responsive-sprite($sprites-sprites, unproductive);}
-.sprites-condemner
-  {@include responsive-sprite($sprites-sprites, condemner);}
-.sprites-unfair
-  {@include responsive-sprite($sprites-sprites, unfair);}
-.sprites-expensive
-  {@include responsive-sprite($sprites-sprites, expensive);}
+// TODO: it should have a better way to do this, with regex maybe?
+.sprites-downside-unproductive
+  {@include responsive-sprite($sprites-sprites, downside-unproductive);}
+.sprites-downside-condemner
+  {@include responsive-sprite($sprites-sprites, downside-condemner);}
+.sprites-downside-unfair
+  {@include responsive-sprite($sprites-sprites, downside-unfair);}
+.sprites-downside-expensive
+  {@include responsive-sprite($sprites-sprites, downside-expensive);}
+
+.sprites-partner-meurio
+  {@include responsive-sprite($sprites-sprites, partner-meurio);}
+.sprites-partner-ddh
+  {@include responsive-sprite($sprites-sprites, partner-ddh);}
+.sprites-partner-dpq
+  {@include responsive-sprite($sprites-sprites, partner-dpq);}
+.sprites-partner-gtnm
+  {@include responsive-sprite($sprites-sprites, partner-gtnm);}
+.sprites-partner-paporeto
+  {@include responsive-sprite($sprites-sprites, partner-paporeto);}
