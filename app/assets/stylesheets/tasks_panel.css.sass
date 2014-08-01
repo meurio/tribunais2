@@ -61,13 +61,16 @@
         .button
           width: 100%
 
-  @media (max-width: 900px)
-    .tasks-menu, .task
-      +grid-column(12)
+  @media #{$medium-down}
     .tasks-menu
+      padding: 0
+      width: 100%
       margin-bottom: 2em
+    .task
+      +grid-column(12)
 
-  @media (max-width: 750px)
+  @media #{$small-only}
     .task
       form, .briefing
-        +grid-column(12)
+        padding: 0
+        width: 100%
