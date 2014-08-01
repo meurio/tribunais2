@@ -4,7 +4,7 @@
       span.tasks-menu-title Minhas missões
       ul
         - @tasks.each do |task|
-          li#poke_gilmar_mendes class=task_button_class(task, @accomplished_tasks)
+          li#poke_gilmar_mendes.bubble class=task_button_class(task, @accomplished_tasks)
             span.mission= task.mission
             span.name= task.name
     - if current_user.nil?
@@ -37,3 +37,4 @@
 
     - else
       .task#poke_rodrigo_janot
+  .more.bubble Saiba mais sobre os Tribunais Militares
