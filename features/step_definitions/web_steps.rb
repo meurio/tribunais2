@@ -10,6 +10,10 @@ When(/^I press "(.*?)"$/) do |arg1|
   click_button to_button(arg1)
 end
 
+Given(/^I click in "(.*?)"$/) do |arg1|
+  click_link to_link(arg1)
+end
+
 Then(/^I should be in "(.*?)"$/) do |arg1|
   expect(current_path).to match to_route(arg1)
 end

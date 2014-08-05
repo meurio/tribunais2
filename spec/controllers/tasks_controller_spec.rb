@@ -22,10 +22,10 @@ RSpec.describe TasksController, :type => :controller do
 
     context "when the user exists" do
       before { @user = Fabricate(:user) }
-      subject { get(:index, login_email: @user.email) }
+      subject { get(:index, login: {email: @user.email}) }
 
       it "logs the user in" do
-        get(:index, login_email: @user.email)
+        get(:index, login: {email: @user.email})
         expect(session[:user_id]).to eq @user.id
       end
 
@@ -35,7 +35,7 @@ RSpec.describe TasksController, :type => :controller do
     end
 
     context "when the user does not exists" do
-      subject { get(:index, login_email: 'any@email.fake') }
+      subject { get(:index, login: {email: 'any@email.fake'}) }
 
       it "shows an alert message" do
         expect(subject.request.flash[:alert]).to_not be_nil

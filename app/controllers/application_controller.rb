@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def login_via_email
-    if params[:login_email].present?
-      if session[:user_id] = User.find_by(email: params[:login_email]).try(:id)
+    if params[:login].present?
+      if session[:user_id] = User.find_by(email: params[:login][:email]).try(:id)
         redirect_to root_path
       else
         redirect_to root_path, alert: 'O usuário não foi encontrado'

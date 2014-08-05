@@ -55,6 +55,9 @@
         span
           position: relative
           top: 3px
+  .form-links
+    +grid-column(12)
+    margin-bottom: .25em
   form
     background: $dark-blue
     padding: 1em
@@ -87,13 +90,15 @@
         margin-bottom: 1em
     .counter
       +grid-column($columns: 12, $offset: 0)
+    .form-links
+      text-align: center
     form
       +grid-column(8, true, true)
       .first_name_field, .last_name_field, .email_field, .submit_button
         +grid-column(12)
       .first_name_field, .last_name_field, .email_field
         margin-bottom: 1em
-  
+
   @media #{$small-only}
     form
       +grid-column(12, true, true)
@@ -102,6 +107,7 @@
       .first_name_field, .last_name_field, .email_field
         margin-bottom: 1em
 
-
-
-
+.reveal-modal
+  form
+    input.button
+      margin: 0

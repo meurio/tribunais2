@@ -7,11 +7,13 @@ def to_field string
   return "task_accomplishment_user_attributes_first_name" if string == "the first name field"
   return "task_accomplishment_user_attributes_last_name" if string == "the last name field"
   return "task_accomplishment_user_attributes_email" if string == "the email field"
+  return "login_email" if string == "the login email field"
   raise "I don't know field '#{string}'"
 end
 
 def to_button string
   return "poke_gilmar_mendes_button" if string == "the poke Gilmar Mendes submit button"
+  return "login_button" if string == "the login submit button"
   raise "I don't know button '#{string}'"
 end
 
@@ -20,4 +22,9 @@ def to_element string
   return ".last-name-field.error" if string == "the last name field error"
   return ".email-field.error" if string == "the email field error"
   raise "I don't know element '#{string}'"
+end
+
+def to_link string
+  return "login-link" if string == "the login link"
+  raise "I don't know link '#{string}'"
 end
