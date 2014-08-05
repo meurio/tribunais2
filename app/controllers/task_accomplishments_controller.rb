@@ -10,7 +10,7 @@ class TaskAccomplishmentsController < ApplicationController
     @task_accomplishment = TaskAccomplishment.create user_id: user.id, task_id: params[:task_id]
 
     session[:user_id] = @task_accomplishment.user.id
-    redirect_to root_path
+    redirect_to root_path(anchor: "tasks-panel")
   end
 
   private
