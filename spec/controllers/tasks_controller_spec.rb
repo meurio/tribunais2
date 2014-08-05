@@ -30,7 +30,7 @@ RSpec.describe TasksController, :type => :controller do
       end
 
       it "redirects the user" do
-        expect(subject).to redirect_to(root_path)
+        expect(subject).to redirect_to(root_path(anchor: "tasks-panel"))
       end
     end
 
