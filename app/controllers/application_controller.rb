@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def login_via_email
     if params[:login].present?
       if session[:user_id] = User.find_by(email: params[:login][:email]).try(:id)
-        redirect_to root_path
+        redirect_to root_path(anchor: "tasks-panel")
       else
         redirect_to root_path, alert: 'O usuário não foi encontrado'
       end
