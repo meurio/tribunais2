@@ -1,4 +1,4 @@
-.tasks-panel#tasks-panel
+.tasks-panel#tasks-panel data={"current-user-id" => current_user.present? ? current_user.id : nil}
   .row
     .tasks-menu
       span.tasks-menu-title Minhas missões
