@@ -1,6 +1,8 @@
 - for key, msg in flash
   - unless msg.blank?
-    .flash
-      div class="#{key} wrapper"
-        div class=key
-          == msg
+    .row
+      .flash
+        div class="#{key} wrapper"
+          div class=[key, "alert-box", "radius"] data={alert: true}
+            == msg
+            a href="#" class="close" &times;
