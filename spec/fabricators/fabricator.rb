@@ -5,7 +5,7 @@ Fabricator(:user) do
 end
 
 Fabricator(:task) do
-  index { sequence(:index) }
+  position { sequence(:position) }
   mailchimp_list_uid { sequence(:mailchimp_list_uid) }
   name { sequence(:name) {|i| "Task #{i}"} }
   mission 'Mission'
