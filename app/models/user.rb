@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   has_many :task_accomplishments
-  has_many :tasks, through: :task_accomplishments
+  has_many :tasks, -> { order("position ASC") }, through: :task_accomplishments
 
   # TODO: move this method to a gem
   def self.create params
