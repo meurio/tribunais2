@@ -23,17 +23,18 @@
         span.hash  #DesmilitarizaçãodaJustiça
 
   - if current_user.nil?
+    .row
+      .form-links
+        = link_to "Já participa da missão? Clique aqui", "#", id: 'login-link', data: { "reveal-id" => "login" }
+        #login.reveal-modal.small.login data={reveal: true}
+          = form_tag("/", data: {abide: true}, method: :get) do
+            = label(:login, :email)
+            = email_field(:login, :email, required: true)
+            small.error O email é obrigatório
+            = submit_tag("Entrar", class: ["button", "radius"], id: :login_button)
+          a.close-reveal-modal &#215;
+          
     .form_wraper
-      .row
-        .form-links
-          = link_to "Já participa da missão? Clique aqui", "#", id: 'login-link', data: { "reveal-id" => "login" }
-          #login.reveal-modal.small.login data={reveal: true}
-            = form_tag("/", data: {abide: true}, method: :get) do
-              = label(:login, :email)
-              = email_field(:login, :email, required: true)
-              small.error O email é obrigatório
-              = submit_tag("Entrar", class: ["button", "radius"], id: :login_button)
-            a.close-reveal-modal &#215;
       .row
         = form_for [@current_task, @task_accomplishment], html: { class: :scrollable_form }, data: { abide: true } do |f|
           .row
