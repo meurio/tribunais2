@@ -4,7 +4,7 @@
       span.tasks-menu-title Minhas missões
       ul
         - @tasks.each do |task|
-          li.bubble class=task_button_class(task, @accomplished_tasks) id=task.slug
+          li class=task_button_class(task, @accomplished_tasks, @current_task) id=task.slug
             span.mission= task.mission
             span.name= task.name
     = render partial: @current_task.slug if @current_task.present?

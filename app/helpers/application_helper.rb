@@ -1,9 +1,23 @@
 module ApplicationHelper
-  def task_button_class task, accomplished_tasks
+  def task_button_class task, accomplished_tasks, current_task
+    classes = []
+
     if accomplished_tasks.include?(task)
-      "accomplished icon-checkmark"
-    else
-      "icon-mail2"
+      classes << "accomplished" << "icon-checkmark"
     end
+
+    if task == current_task
+      classes << "bubble"
+    end
+
+    if task.slug == "poke_gilmar_mendes" || task.slug == "poke_rodrigo_janot"
+      classes << "icon-mail2"
+    end
+
+    if task.slug == "share_on_facebook"
+      classes << "icon-facebook"
+    end
+
+    return classes
   end
 end
