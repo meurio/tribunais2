@@ -3,7 +3,7 @@
     .mission-type.icon-facebook
       span= @current_task.mission
     h2= @current_task.name
-    p Temos que ter a participação de milhares de cidadãos para que a pressão popular seja mais forte que a influência dos setores autoritários. Compartilhe agora a página da mobilização e convoque seus amigos para a missão pela desmilitarização da justiça.
+    p= @current_task.description
   = form_for [@current_task, @task_accomplishment], data: { abide: true } do |f|
     .submit-field
       = f.submit "Compartilhar", id: :share_on_facebook_button, class: [:button, :radius, :large], data: {href: "https://www.facebook.com/sharer/sharer.php?u=#{URI::encode(root_url)}"}
