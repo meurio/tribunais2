@@ -3,7 +3,7 @@
     .mission-type.icon-mail2
       span= @current_task.mission
     h2= @current_task.name
-    p O ministro do STF Gilmar Mendes, relator da ADPF 289, é o responsável pela análise mais detalhada do processo e pelo primeiro voto. Ou seja: é fundamental que ele saiba desde já que a sociedade quer o fim do julgamento de civis por tribunais militares.
+    p= @current_task.description
   = form_for [@current_task, @task_accomplishment], data: { abide: true } do |f|
     = f.fields_for :user do |user_form|
       .first-name-field

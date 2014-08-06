@@ -29,6 +29,7 @@
       .form-links
         = link_to "Já participa da missão? Clique aqui", "#", id: 'login-link', data: { "reveal-id" => "login" }
         #login.reveal-modal.small.login data={reveal: true}
+          p Insira seu email abaixo para continuar participando das missões:
           = form_tag("/", data: {abide: true}, method: :get) do
             = label(:login, :email)
             = email_field(:login, :email, required: true)

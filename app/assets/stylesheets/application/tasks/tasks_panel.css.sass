@@ -1,4 +1,6 @@
 .tasks-panel
+  &.accomplished-all
+    background-color: rgba($blue, .25)
   .tasks-menu
     +grid-column(4)
     span.tasks-menu-title
@@ -43,6 +45,13 @@
           +opacity(1)
         &.current
           +opacity(1)
+  .congrats
+    +grid-column($columns: 4, $offset: 2)
+    text-align: center
+    .icon-checkmark
+      color: $blue
+      font-size: 7em
+      margin-top: .5em
   .task
     +grid-column(8)
     padding-top: 2em
@@ -92,18 +101,28 @@
       margin-bottom: 2em
       ul
         padding: 0
-        li:after
-          border-width: 15px 15px 0
-          border-color: $gray transparent
-          bottom: -15px
-          left: 20%
-          top: auto
-          right: auto
+        li
+          display: none
+          &.current
+            display: block
+          &:after
+            border-width: 15px 15px 0
+            border-color: $gray transparent
+            bottom: -15px
+            left: 20%
+            top: auto
+            right: auto
     .task
       +grid-column(12)
+    .congrats
+      +grid-column($columns: 6, $offset: 3)
+      .icon-checkmark
+        margin: 0
 
   @media #{$small-only}
     .task
       form, .briefing
         padding: 0
         width: 100%
+    .congrats
+      +grid-column($columns: 12, $offset: 0)

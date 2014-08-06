@@ -3,7 +3,7 @@
     .mission-type.icon-mail2
       span= @current_task.mission
     h2= @current_task.name
-    p Agora que você já pressionou o relator da ADPF 289, envie também uma mensagem para o procurador-geral da República, Rodrigo Janot. É ele quem vai emitir a opinião do Ministério Público, e sua voz tem grande poder de influência sobre os ministros do STF. A pressão dos setores autoritários em cima do procurador é grande. Precisamos contra-atacar!
+    p= @current_task.description
   = form_for [@current_task, @task_accomplishment], data: { abide: true } do |f|
     .submit-field
       = f.submit "Enviar email", id: :poke_rodrigo_janot_button, class: [:button, :radius, :large]
