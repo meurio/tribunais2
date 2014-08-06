@@ -4,6 +4,10 @@ html
     title Desmilitarização da Justiça
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     link rel="stylesheet" href="http://i.icomoon.io/public/b6dafa29d0/MeuRio/style.css"
+    meta property="og:title" content=t("share.facebook.title")
+    meta property="og:image" content=image_url("facebook-share.jpg")
+    meta property="og:description" content=t("share.facebook.description")
+    meta property="og:url" content=request.url
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
