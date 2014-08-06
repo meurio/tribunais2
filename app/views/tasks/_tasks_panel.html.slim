@@ -1,4 +1,4 @@
-.tasks-panel#tasks-panel data={"current-user-id" => current_user.present? ? current_user.id : nil}
+.tasks-panel#tasks-panel data={"current-user-id" => current_user.present? ? current_user.id : nil} class=(@current_task.nil? ? "accomplished-all" : "")
   .row
     .tasks-menu
       span.tasks-menu-title Minhas missões
@@ -7,5 +7,11 @@
           li class=task_button_class(task, @accomplished_tasks, @current_task) id=task.slug
             span.mission= task.mission
             span.name= task.name
-    = render partial: @current_task.slug if @current_task.present?
+    - if @current_task.present?
+      = render partial: @current_task.slug
+    - else
+      .congrats
+        .icon-checkmark
+        p Você já executou todas as ações possíveis neste momento para defender a aprovação da ADPF 289.
+        p Fique atento ao seu email: essa história ainda está longe do fim, e você será alertado para participar dos próximos passos em breve!
   .more.bubble Saiba mais sobre os Tribunais Militares
