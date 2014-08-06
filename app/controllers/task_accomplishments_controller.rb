@@ -1,6 +1,6 @@
 class TaskAccomplishmentsController < ApplicationController
   def create
-    user = User.find_by_email task_accomplishment_params[:user_attributes][:email]
+    user = current_user || User.find_by_email(task_accomplishment_params[:user_attributes][:email])
 
     if user.nil?
       task_accomplishment_params[:user_attributes][:ip] = request.remote_ip
@@ -16,6 +16,6 @@ class TaskAccomplishmentsController < ApplicationController
   private
 
   def task_accomplishment_params
-    params.require(:task_accomplishment).permit(user_attributes: [:first_name, :last_name, :email, :ip])
+    params.fetch(:task_accomplishment, {}).permit(user_attributes: [:first_name, :last_name, :email, :ip])
   end
 end

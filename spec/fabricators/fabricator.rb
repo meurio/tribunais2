@@ -9,6 +9,7 @@ Fabricator(:task) do
   mailchimp_list_uid { sequence(:mailchimp_list_uid) }
   name { sequence(:name) {|i| "Task #{i}"} }
   mission 'Mission'
+  slug { sequence(:slug) {|i| "task_#{i}"} }
 end
 
 Fabricator(:task_accomplishment) do

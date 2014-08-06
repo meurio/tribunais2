@@ -1,0 +1,9 @@
+.task#share_on_facebook
+  .briefing
+    .mission-type.icon-facebook
+      span= @current_task.mission
+    h2= @current_task.name
+    p ?
+  = form_for [@current_task, @task_accomplishment], data: { abide: true } do |f|
+    .submit-field
+      = f.submit "Compartilhar", id: :share_on_facebook_button, class: [:button, :radius, :large]
