@@ -31,7 +31,8 @@ class User < ActiveRecord::Base
   end
 
   def unaccomplished_tasks
-    Task.order(position: :asc) - self.tasks
-    # Task.joins("LEFT OUTER JOIN task_accomplishments ON tasks.id = task_accomplishments.task_id AND task_accomplishments.user_id = ?", self.id).where("task_accomplishments.id IS NULL")
+    Task
+      .joins("LEFT OUTER JOIN task_accomplishments ON tasks.id = task_accomplishments.task_id AND task_accomplishments.user_id = #{self.id}")
+      .where("task_accomplishments.id IS NULL")
   end
 end
