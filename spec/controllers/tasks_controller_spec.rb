@@ -63,6 +63,11 @@ RSpec.describe TasksController, :type => :controller do
           get :index
           expect(assigns(:accomplished_tasks)).to include(@task1)
         end
+
+        it "should assign user unaccomplished tasks to @unaccomplished_tasks" do
+          get :index
+          expect(assigns(:unaccomplished_tasks)).to include(@task2)
+        end
       end
 
       context "when the user hasn't accomplished any task" do        
@@ -74,6 +79,11 @@ RSpec.describe TasksController, :type => :controller do
         it "should assign an empty array to @accomplished_tasks" do
           get :index
           expect(assigns(:accomplished_tasks)).to be_empty
+        end
+
+        it "should assign all tasks to @unaccomplished_tasks" do
+          get :index
+          expect(assigns(:unaccomplished_tasks)).to include(@task1, @task2)
         end
       end      
     end
