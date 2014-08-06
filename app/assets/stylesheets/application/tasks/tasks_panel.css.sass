@@ -11,13 +11,14 @@
       font-weight: bold
     ul
       background: $gray
-      color: rgba(255, 255, 255, .25)
+      color: white
       margin: 0
       padding-bottom: 350px
       li
         padding: 25px
         position: relative
         list-style: none
+        +opacity(.25)
         span.mission, span.name
           padding-left: 40px
           font-weight: bold
@@ -39,8 +40,9 @@
           top: 45px
         &.accomplished
           color: $blue
+          +opacity(1)
         &.current
-          color: white
+          +opacity(1)
   .task
     +grid-column(8)
     padding-top: 2em
