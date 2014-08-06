@@ -92,13 +92,17 @@
       margin-bottom: 2em
       ul
         padding: 0
-        li:after
-          border-width: 15px 15px 0
-          border-color: $gray transparent
-          bottom: -15px
-          left: 20%
-          top: auto
-          right: auto
+        li
+          display: none
+          &.current
+            display: block
+          &:after
+            border-width: 15px 15px 0
+            border-color: $gray transparent
+            bottom: -15px
+            left: 20%
+            top: auto
+            right: auto
     .task
       +grid-column(12)
 
