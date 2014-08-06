@@ -16,8 +16,8 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ 
-  $(document).foundation(); 
+$(function(){
+  $(document).foundation();
 
   $(window).scroll(function(){
     // fixed form
@@ -30,5 +30,14 @@ $(function(){
     } else{
       $(".form_wraper").removeClass("fixed");
     }
+  });
+
+  $('#share_on_facebook_button').click(function(){
+    window.open(
+      $(event.target).attr("data-href"),
+      'facebox-share-dialog',
+      'width=626,height=436'
+    );
+    return true;
   });
 });
