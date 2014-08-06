@@ -8,6 +8,7 @@ html
     meta property="og:image" content=image_url("facebook-share.jpg")
     meta property="og:description" content=t("share.facebook.description")
     meta property="og:url" content=request.url
+    = favicon_link_tag 'favicon.png'
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
