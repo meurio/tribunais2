@@ -7,7 +7,7 @@ module ApplicationHelper
     end
 
     if task == current_task
-      classes << "bubble"
+      classes << "current" << "bubble"
     end
 
     if task.slug == "poke_gilmar_mendes" || task.slug == "poke_rodrigo_janot"
