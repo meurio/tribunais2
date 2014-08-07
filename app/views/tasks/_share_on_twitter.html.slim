@@ -1,0 +1,10 @@
+.task#share_on_twitter
+  .briefing
+    .mission-type.icon-twitter
+      span= @current_task.mission
+    h2= @current_task.name
+    p= @current_task.description
+  = form_for [@current_task, @task_accomplishment], data: { abide: true } do |f|
+    .submit-field
+      = f.submit "Compartilhar", id: :share_on_twitter_button, class: [:button, :radius, :large], data: {href: "https://twitter.com/share?url=#{URI::encode('http://bit.ly/desmilitarizacaodajustica')}&text=#{URI::encode(t('share.twitter.tweet'))}"}
+      = f.submit "Não tenho Twitter", class: [:link]

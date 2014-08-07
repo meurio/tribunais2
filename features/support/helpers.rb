@@ -16,6 +16,7 @@ def to_button string
   return "poke_rodrigo_janot_button" if string == "the poke Rodrigo Janot submit button"
   return "login_button" if string == "the login submit button"
   return "share_on_facebook_button" if string == "share on Facebook button"
+  return "share_on_twitter_button" if string == "share on Twitter button"
   raise "I don't know button '#{string}'"
 end
 

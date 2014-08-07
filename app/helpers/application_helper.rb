@@ -12,6 +12,8 @@ module ApplicationHelper
       classes << "icon-mail2"
     elsif task.slug == "share_on_facebook"
       classes << "icon-facebook"
+    elsif task.slug == "share_on_twitter"
+      classes << "icon-twitter"
     end
 
     return classes
