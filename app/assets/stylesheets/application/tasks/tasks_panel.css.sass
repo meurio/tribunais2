@@ -3,6 +3,7 @@
     background-color: rgba($blue, .25)
   .tasks-menu
     +grid-column(4)
+    position: relative
     span.tasks-menu-title
       background: $blue
       display: block
@@ -11,6 +12,13 @@
       text-align: center
       color: $gray
       font-weight: bold
+    span.tasks-menu-footer
+      padding: 25px
+      font-size: .9em
+      position: absolute
+      bottom: 0
+      a:before
+        margin-right: 5px
     ul
       background: $gray
       color: white
@@ -99,6 +107,10 @@
       padding: 0
       width: 100%
       margin-bottom: 2em
+      span.tasks-menu-footer
+        position: relative
+        padding: 0 0 20px 25px
+        display: block
       ul
         padding: 0
         li

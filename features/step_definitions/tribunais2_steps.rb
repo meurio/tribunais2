@@ -26,6 +26,14 @@ Then(/^I should see "(.*?)" task accomplished$/) do |arg1|
   end
 end
 
+Then(/^I should see "(.*?)" task unaccomplished$/) do |arg1|
+  if arg1 == "poke Gilmar Mendes"
+    expect(page).to_not have_css(".tasks-menu li#poke_gilmar_mendes.accomplished")
+  else
+    raise "I don't know task '#{arg1}'"
+  end
+end
+
 Then(/^I should see "(.*?)" task$/) do |arg1|
   if arg1 == "poke Gilmar Mendes"
     expect(page).to have_css("#poke_gilmar_mendes")
