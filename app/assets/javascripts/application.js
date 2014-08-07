@@ -23,18 +23,28 @@ $(function(){
     $(window).scroll(function(){
       // fixed form
       if(typeof scrollable_form_y === "undefined")
-        scrollable_form_y = $(".scrollable_form").position().top
+        scrollable_form_y = $(".military_justice_downsides").position().top;
 
-      console.log("window.scrollY: " + window.scrollY + ", scrollable_form_y: " + scrollable_form_y);
       if(window.scrollY >= scrollable_form_y && $(document).width() > 735){
         $(".form_wraper").addClass("fixed");
+        $(".military_justice_downsides").css("margin-top", "87px");
       } else{
         $(".form_wraper").removeClass("fixed");
+        $(".military_justice_downsides").css("margin-top", "0");
       }
     });
   }
 
   $('#share_on_facebook_button').click(function(){
+    window.open(
+      $(event.target).attr("data-href"),
+      'facebox-share-dialog',
+      'width=626,height=436'
+    );
+    return true;
+  });
+
+  $('#share_on_twitter_button').click(function(){
     window.open(
       $(event.target).attr("data-href"),
       'facebox-share-dialog',

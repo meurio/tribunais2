@@ -21,6 +21,8 @@ Then(/^I should see "(.*?)" task accomplished$/) do |arg1|
     expect(page).to have_css(".tasks-menu li#poke_rodrigo_janot.accomplished")
   elsif arg1 == "share on Facebook"
     expect(page).to have_css(".tasks-menu li#share_on_facebook.accomplished")
+  elsif arg1 == "share on Twitter"
+    expect(page).to have_css(".tasks-menu li#share_on_twitter.accomplished")
   else
     raise "I don't know task '#{arg1}'"
   end
@@ -41,6 +43,8 @@ Then(/^I should see "(.*?)" task$/) do |arg1|
     expect(page).to have_css("#poke_rodrigo_janot")
   elsif arg1 == "share on Facebook"
     expect(page).to have_css("#share_on_facebook")
+  elsif arg1 == "share on Twitter"
+    expect(page).to have_css("#share_on_twitter")
   else
     raise "I don't know task '#{arg1}'"
   end
@@ -53,6 +57,8 @@ Given(/^there is a task "(.*?)"$/) do |arg1|
     Fabricate(:task, position: 2, slug: "poke_rodrigo_janot")
   elsif arg1 == "share on Facebook"
     Fabricate(:task, position: 3, slug: "share_on_facebook")
+  elsif arg1 == "share on Twitter"
+    Fabricate(:task, position: 4, slug: "share_on_twitter")
   else
     raise "I don't know task '#{arg1}'"
   end
