@@ -32,3 +32,12 @@ Task.create(
   position: 3,
   description: "Temos que ter a participação de milhares de cidadãos para que a pressão popular seja mais forte que a influência dos setores autoritários. Compartilhe agora a página da mobilização e convoque seus amigos para a missão pela desmilitarização da justiça."
 )
+
+Task.create(
+  name: "Enviar mensagem para o STF no Twitter",
+  mission: "Missão 4",
+  mailchimp_list_uid: "1d",
+  slug: "share_on_twitter",
+  position: 4,
+  description: "O STF usa o Twitter como um canal oficial de diálogo com a população. Vamos aproveitar esse espaço para enviar nossa mensagem e garantir que nossa voz seja ouvida."
+)
