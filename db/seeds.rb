@@ -21,7 +21,7 @@ Task.create(
   mailchimp_list_uid: "1b",
   slug: "poke_rodrigo_janot",
   position: 2,
-  description: "Agora que você já pressionou o relator da ADPF 289, envie também uma mensagem para o Procurador Geral da República, Rodrigo Janot. É ele quem vai emitir a opinião do Ministério Público, e sua voz tem grande poder de influência sobre os ministros do STF. A pressão dos setores autoritários em cima do procurador é grande. Precisamos contra-atacar!"
+  description: "Agora que você já pressionou o relator da ADPF 289, envie também uma mensagem para o procurador-geral da República, Rodrigo Janot. É ele quem vai emitir a opinião do Ministério Público, e sua voz tem grande poder de influência sobre os ministros do STF. A pressão dos setores autoritários em cima do procurador é grande. Precisamos contra-atacar!"
 )
 
 Task.create(
@@ -30,7 +30,7 @@ Task.create(
   mailchimp_list_uid: "1c",
   slug: "share_on_facebook",
   position: 3,
-  description: "Temos que ter a participação de milhares de cidadãos para que a pressão popular seja mais forte que a influência dos setores autoritários. Compartilhe agora a página da mobilização e convoque seus amigos para a missão pela desmilitarização da justiça."
+  description: "Precisamos da participação de milhares de cidadãos para que a pressão popular seja mais forte que a influência dos setores autoritários. Compartilhe agora a página da mobilização e convoque seus amigos para a missão pela desmilitarização da justiça."
 )
 
 Task.create(
