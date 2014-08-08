@@ -32,6 +32,7 @@ gem 'foundation-rails'
 gem 'httparty'
 gem 'compass-rails'
 gem 'acts_as_list'
+gem 'newrelic_rpm'
 
 # test
 group :development, :test do
