@@ -1,0 +1,26 @@
+.current-task-menu
+  position: fixed
+  z-index: 9999
+  width: 100%
+  color: white
+  display: none
+  +transition-property(top)
+  +transition-duration(1s)
+  .row
+    background: $gray
+    padding-top: 1em
+    padding-bottom: 1em
+    +border-radius(0 0 5px 5px)
+  .current-task-name-and-mission
+    +grid-column(9)
+    font-size: 1.5em
+    line-height: 30px
+  .current-task-button
+    +grid-column(3)
+    text-align: right
+    .button
+      margin: 0
+
+@media #{$medium-down}
+  .current-task-menu
+    display: none
