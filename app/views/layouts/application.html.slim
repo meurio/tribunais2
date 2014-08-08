@@ -19,3 +19,10 @@ html
   body class=[controller.controller_name, controller.action_name]
     = yield
     = javascript_include_tag "application"
+    javascript:
+      var _mfq = _mfq || [];
+      (function() {
+      var mf = document.createElement("script"); mf.type = "text/javascript"; mf.async = true;
+      mf.src = "//cdn.mouseflow.com/projects/ead0975a-32db-4411-8852-67774cd5e635.js";
+      document.getElementsByTagName("head")[0].appendChild(mf);
+      })();

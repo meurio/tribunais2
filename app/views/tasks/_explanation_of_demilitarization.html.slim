@@ -30,19 +30,6 @@
         |  Se milhares de pessoas pressionarem agora, ele saberá que não descansaremos até que civis não sejam mais julgados por militares. Adicione sua voz à mobilização pela desmilitarização da justiça, enviando um email automático através do formulário abaixo.
 
   - if current_user.nil?
-    .row
-      .form-links
-        span.form-link= link_to "Já participa da missão? Clique aqui", "#", id: 'login-link', data: { "reveal-id" => "login" }
-        #login.reveal-modal.small.login data={reveal: true}
-          p Insira seu email abaixo para continuar participando das missões:
-          = form_tag("/", data: {abide: true}, method: :get) do
-            = label(:login, :email)
-            = email_field(:login, :email, required: true)
-            small.error O email é obrigatório
-            = submit_tag("Entrar", class: ["button", "radius"], id: :login_button)
-          a.close-reveal-modal &#215;
-        span.form-link= link_to "Quero ver o email", "#", data: { "reveal-id" => "poke_gilmar_mendes_mail" }
-
     .form_wraper
       .row
         = form_for [@current_task, @task_accomplishment], html: { class: :scrollable_form }, data: { abide: true } do |f|
@@ -56,6 +43,18 @@
                 = user_form.email_field(:email, placeholder: 'Insira seu email', required: true, id: :user_email)
               .submit_button
                 = user_form.submit "Enviar email", id: 'poke-submit-button', class: [:button, :radius]
+    .row
+      .form-links
+        span.form-link= link_to "Já participa da missão? Clique aqui", "#", id: 'login-link', data: { "reveal-id" => "login" }
+        #login.reveal-modal.small.login data={reveal: true}
+          p Insira seu email abaixo para continuar participando das missões:
+          = form_tag("/", data: {abide: true}, method: :get) do
+            = label(:login, :email)
+            = email_field(:login, :email, required: true)
+            small.error O email é obrigatório
+            = submit_tag("Entrar", class: ["button", "radius"], id: :login_button)
+          a.close-reveal-modal &#215;
+        span.form-link= link_to "Quero ver o email", "#", data: { "reveal-id" => "poke_gilmar_mendes_mail" }
 
   .row
     .divider= image_tag("divider-dark.png")
