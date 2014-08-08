@@ -24,7 +24,7 @@
       font-weight: bold
       font-size: 1.1em
   .counter
-    +grid-column($columns: 8, $offset: 4)
+    +grid-column(8)
     margin-bottom: 2em
     .digits-and-text
       text-align: left
@@ -53,6 +53,20 @@
         span
           position: relative
           top: 3px
+  .logged-user
+    +grid-column(4)
+    text-align: right
+    margin-bottom: 2em
+    span, a
+      padding: .5em
+      font-size: .9em
+    span
+      color: $blue
+    a
+      color: $yellow
+      text-decoration: underline
+
+
   .form-links
     +grid-column(12)
     margin-bottom: .25em
@@ -96,8 +110,8 @@
     .title
       h2, strong
         margin-bottom: 1em
-    .counter
-      +grid-column($columns: 12, $offset: 0)
+    .counter, .logged-user
+      +grid-column($columns: 6)
     .form-links
       text-align: center
     form
@@ -108,6 +122,10 @@
         margin-bottom: 1em
 
   @media #{$small-only}
+    .counter, .logged-user
+      +grid-column($columns: 12)
+    .logged-user
+      text-align: left
     form
       +grid-column(12, true, true)
       .first_name_field, .last_name_field, .email_field, .submit_button
