@@ -10,10 +10,10 @@
             | Ações pela
             br
             | desmilitarização da justiça
-    .logged-user
-      - if current_user.present?
+    - if current_user.present?
+      .logged-user
         span.user-name Olá, #{current_user.try(:first_name)}
-        = link_to 'Missões', '#tasks-panel'
+        = link_to 'Missões', '#tasks-panel', data: { scroll: true }
         = link_to 'Logout', logout_path
 
   = render 'layouts/flash', locals: { flash: flash } unless flash.empty?
