@@ -7,9 +7,10 @@
           li class=task_button_class(task, @accomplished_tasks, @current_task) id=task.slug
             span.mission= task.mission
             span.name= task.name
-        span.tasks-menu-footer
-          = link_to 'Logout', logout_path, id: 'logout-link', class: 'icon-power' if current_user.present?
     - if @current_task.present?
+      - if @current_user.present?
+        .accomplished-mission
+          | #{@current_user.first_name}, missão #{@current_task.position - 1} concluída com sucesso! (Não é #{@current_user.first_name}? #{link_to("Clique aqui", logout_path)})
       = render partial: @current_task.slug
     - else
       .congrats

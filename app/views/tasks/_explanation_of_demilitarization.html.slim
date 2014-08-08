@@ -13,8 +13,8 @@
     - if current_user.present?
       .logged-user
         span.user-name Olá, #{current_user.try(:first_name)}
-        = link_to 'Missões', '#tasks-panel', data: { scroll: true }
-        = link_to 'Logout', logout_path
+        = link_to 'Minhas Missões', '#tasks-panel', data: { scroll: true }
+        = link_to 'Sair', logout_path
 
   = render 'layouts/flash', locals: { flash: flash } unless flash.empty?
 
@@ -26,8 +26,8 @@
       p A boa notícia é que a Procuradoria Geral da República entrou com uma ação no Supremo Tribunal Federal para acabar com esse absurdo e o voto do STF deve ocorrer ainda esse ano!
       p Sabemos que os militares não querem abrir mão de privilégios e já estão se articulando para pressionar os ministros do STF. É por isso que estamos unindo pessoas dispostas a orquestrar um contra-ataque.
       p
-        strong A primeira missão é enviar um email para o relator do processo no STF, ministro Gilmar Mendes, já que sua opinião influenciará o voto dos outros ministros.
-        |  Se milhares de pessoas pressionarem agora, ele saberá que não descansaremos até que civis não sejam mais julgados por militares. Adicione sua voz à mobilização pela desmilitarização da justiça, enviando um email automático através do formulário abaixo.
+        | A primeira missão é enviar um email para o relator do processo no STF, ministro Gilmar Mendes, já que sua opinião influenciará o voto dos outros ministros. Se milhares de pessoas pressionarem agora, ele saberá que não descansaremos até que civis não sejam mais julgados por militares.
+        strong  Adicione sua voz à mobilização pela desmilitarização da justiça, enviando um email automático através do formulário abaixo.
 
   - if current_user.nil?
     .form_wraper
@@ -45,7 +45,7 @@
                 = user_form.submit "Enviar email", id: 'poke-submit-button', class: [:button, :radius]
     .row
       .form-links
-        span.form-link= link_to "Já participa da missão? Clique aqui", "#", id: 'login-link', data: { "reveal-id" => "login" }
+        span.form-link= link_to "Já participa da mobilização? Clique aqui", "#", id: 'login-link', data: { "reveal-id" => "login" }
         #login.reveal-modal.small.login data={reveal: true}
           p Insira seu email abaixo para continuar participando das missões:
           = form_tag("/", data: {abide: true}, method: :get) do
@@ -54,7 +54,7 @@
             small.error O email é obrigatório
             = submit_tag("Entrar", class: ["button", "radius"], id: :login_button)
           a.close-reveal-modal &#215;
-        span.form-link= link_to "Quero ver o email", "#", data: { "reveal-id" => "poke_gilmar_mendes_mail" }
+        span.form-link= link_to "Quero ver o email que será enviado", "#", data: { "reveal-id" => "poke_gilmar_mendes_mail" }
 
   .row
     .divider= image_tag("divider-dark.png")

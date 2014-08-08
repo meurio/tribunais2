@@ -63,9 +63,12 @@
       color: $blue
       font-size: 7em
       margin-top: .5em
+  .accomplished-mission
+    +grid-column(8)
+    text-align: center
+    margin: 1em 0
   .task
     +grid-column(8)
-    padding-top: 2em
     padding-bottom: 2em
     .briefing
       +grid-column($columns: 10, $center: true)
@@ -127,6 +130,8 @@
             left: 20%
             top: auto
             right: auto
+    .accomplished-mission
+      +grid-column(12)
     .task
       +grid-column(12)
     .congrats
