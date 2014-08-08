@@ -21,6 +21,7 @@ $(function(){
 
   if($(".current-task-menu").size()){
     $(".current-task-menu").css("top", -$(".current-task-menu").height());
+    $(".current-task-menu").show();
     $(window).scroll(function(){
       // fixed form
       if(typeof scrollable_form_y === "undefined")
