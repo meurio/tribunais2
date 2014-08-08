@@ -1,5 +1,9 @@
 class AppMailer < ActionMailer::Base
-  default from: "from@example.com"
+  include AbstractController::Callbacks
+  default from: "Guilherme - Meu Rio <guilherme@meurio.org.br>"
+  layout "mail"
+
+  before_filter { @organization = Organization.find_by_slug("meurio") }
 
   def poke_gilmar_mendes tasks_user
     headers "X-SMTPAPI" => "{ \"category\": [\"tribunais2\", \"poke_gilmar_mendes\"] }"
@@ -23,7 +27,6 @@ class AppMailer < ActionMailer::Base
     headers "X-SMTPAPI" => "{ \"category\": [\"tribunais2\", \"thanks\"] }"
     mail(
       to: task_accomplishment.user.email,
-      from: "guilherme@meurio.org.br",
       subject: 'Obrigado por participar da missão pela desmilitarização da justiça'
     )
   end
