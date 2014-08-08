@@ -19,18 +19,17 @@
 $(function(){
   $(document).foundation();
 
-  if($(".form_wraper").size()){
+  if($(".current-task-menu").size()){
+    $(".current-task-menu").css("top", -$(".current-task-menu").height());
     $(window).scroll(function(){
       // fixed form
       if(typeof scrollable_form_y === "undefined")
         scrollable_form_y = $(".military_justice_downsides").position().top;
 
-      if(window.scrollY >= scrollable_form_y && $(document).width() > 735){
-        $(".form_wraper").addClass("fixed");
-        $(".military_justice_downsides").css("margin-top", "87px");
+      if(window.scrollY >= scrollable_form_y){
+        $(".current-task-menu").css("top", 0);
       } else{
-        $(".form_wraper").removeClass("fixed");
-        $(".military_justice_downsides").css("margin-top", "0");
+        $(".current-task-menu").css("top", -$(".current-task-menu").height());
       }
     });
   }
@@ -51,5 +50,18 @@ $(function(){
       'width=626,height=436'
     );
     return true;
+  });
+
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
   });
 });
