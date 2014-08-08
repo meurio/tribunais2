@@ -29,5 +29,6 @@ end
 
 def to_link string
   return "login-link" if string == "the login link"
+  return "logout-link" if string == "the logout link"
   raise "I don't know link '#{string}'"
 end

@@ -14,5 +14,7 @@ Feature: login
     And I fill "the login email field" with "nicolas@trashmail.com"
     When I press "the login submit button"
     Then I should see "poke Gilmar Mendes" task accomplished
+    When I click in "the logout link"
+    Then I should see "poke Gilmar Mendes" task unaccomplished
 
   Scenario: when the user doesn't exists
