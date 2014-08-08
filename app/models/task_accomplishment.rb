@@ -1,6 +1,6 @@
 class TaskAccomplishment < ActiveRecord::Base
   after_create { self.delay.add_to_accounts_segment }
-  after_create { AppMailer.delay.poke_gilmar_mendes(self) if self.task.slug.to_sym == :poke_gilmar_mendes }
+  # after_create { AppMailer.delay.poke_gilmar_mendes(self) if self.task.slug.to_sym == :poke_gilmar_mendes }
   after_create { AppMailer.delay.thanks(self) if self.task.slug.to_sym == :poke_gilmar_mendes }
   after_create { AppMailer.delay.poke_rodrigo_janot(self) if self.task.slug.to_sym == :poke_rodrigo_janot; }
 
