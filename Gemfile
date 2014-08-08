@@ -33,6 +33,7 @@ gem 'httparty'
 gem 'compass-rails'
 gem 'acts_as_list'
 gem 'newrelic_rpm'
+gem 'google-analytics-rails'
 
 # test
 group :development, :test do
