@@ -6,6 +6,7 @@ class AppMailer < ActionMailer::Base
   before_filter { @organization = Organization.find_by_slug("meurio") }
 
   def poke_gilmar_mendes tasks_user
+    @user = tasks_user.user
     headers "X-SMTPAPI" => "{ \"category\": [\"tribunais2\", \"poke_gilmar_mendes\"] }"
     mail(
       to: ENV['GILMAR_MENDES_EMAIL'],
@@ -15,6 +16,7 @@ class AppMailer < ActionMailer::Base
   end
 
   def poke_rodrigo_janot tasks_user
+    @user = tasks_user.user
     headers "X-SMTPAPI" => "{ \"category\": [\"tribunais2\", \"poke_rodrigo_janot\"] }"
     mail(
       to: ENV['RODRIGO_JANOT_EMAIL'],
