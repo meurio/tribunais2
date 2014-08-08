@@ -14,12 +14,10 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
-//= require smooth-scroll.min
 //= require_tree .
 
 $(function(){
   $(document).foundation();
-  smoothScroll.init();
 
   if($(".current-task-menu").size()){
     $(".current-task-menu").css("top", -$(".current-task-menu").height());
