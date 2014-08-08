@@ -14,10 +14,12 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require smooth-scroll.min
 //= require_tree .
 
 $(function(){
   $(document).foundation();
+  smoothScroll.init();
 
   if($(".form_wraper").size()){
     $(window).scroll(function(){
