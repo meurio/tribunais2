@@ -14,6 +14,14 @@ Then(/^an email from "(.*?)" to Rodrigo Janot should be sent just once$/) do |ar
   expect(emails).to have(1).email
 end
 
+Then(/^an email from "(.*?)" to "(.*?)" me should be sent$/) do |arg1, arg2|
+  emails = ActionMailer::Base.deliveries.select do |mailer|
+    mailer.to.include?(arg2) && mailer.from.include?(arg1)
+  end
+
+  expect(emails).to be_any
+end
+
 Then(/^I should see "(.*?)" task accomplished$/) do |arg1|
   if arg1 == "poke Gilmar Mendes"
     expect(page).to have_css(".tasks-menu li#poke_gilmar_mendes.accomplished")

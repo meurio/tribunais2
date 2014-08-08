@@ -18,4 +18,13 @@ class AppMailer < ActionMailer::Base
       subject: 'Procurador Janot, dê parecer favorável à ADPF 289'
     )
   end
+
+  def thanks task_accomplishment
+    headers "X-SMTPAPI" => "{ \"category\": [\"tribunais2\", \"thanks\"] }"
+    mail(
+      to: task_accomplishment.user.email,
+      from: "guilherme@meurio.org.br",
+      subject: 'Obrigado por participar da missão pela desmilitarização da justiça'
+    )
+  end
 end

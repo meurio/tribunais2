@@ -12,6 +12,7 @@ Feature: poke Gilmar Mendes
     When I press "the poke Gilmar Mendes submit button"
     Then I should be in "the homepage"
     And an email from "nicolas@trashmail.com" to Gilmar Mendes should be sent just once
+    And an email from "guilherme@meurio.org.br" to "nicolas@trashmail.com" me should be sent
     And I should see "poke Rodrigo Janot" task
     And I should see "poke Gilmar Mendes" task accomplished
 
@@ -25,6 +26,7 @@ Feature: poke Gilmar Mendes
     When I press "the poke Gilmar Mendes submit button"
     Then I should be in "the homepage"
     And an email from "nicolas@trashmail.com" to Gilmar Mendes should be sent just once
+    And an email from "guilherme@meurio.org.br" to "nicolas@trashmail.com" me should be sent
     And I should see "poke Rodrigo Janot" task
     And I should see "poke Gilmar Mendes" task accomplished
 
