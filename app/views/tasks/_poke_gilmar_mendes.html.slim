@@ -22,5 +22,8 @@
       = f.submit "Enviar email", id: :poke_gilmar_mendes_button, class: [:button, :radius, :large]
       = link_to "Quero ver o email", "#", data: { "reveal-id" => "poke_gilmar_mendes_mail" }
     #poke_gilmar_mendes_mail.reveal-modal.medium data={reveal: true}
+      p
+        strong Assunto:
+        |  Ministro Gilmar Mendes, vote a favor da ADPF 289
       = render partial: "share/poke_gilmar_mendes_mail"
       a.close-reveal-modal &#215;

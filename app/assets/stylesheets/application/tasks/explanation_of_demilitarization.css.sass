@@ -12,7 +12,6 @@
       margin-bottom: 1em
       color: $blue
   .text
-    margin-bottom: 2em
     p
       color: white
     strong
@@ -58,6 +57,14 @@
   .form-links
     +grid-column(12)
     margin-bottom: .25em
+    span.form-link
+      &:after
+        content: "•"
+        color: white
+        margin: 0 .5em
+      &:last-child
+        &:after
+          display: none
   form
     background: $dark-blue
     padding: 1em

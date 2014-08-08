@@ -7,7 +7,10 @@
   = form_for [@current_task, @task_accomplishment], data: { abide: true } do |f|
     .submit-field
       = f.submit "Enviar email", id: :poke_rodrigo_janot_button, class: [:button, :radius, :large]
-      = link_to "Quero ver o email", "#", data: { "reveal-id" => "poke_rodrigo_janot_mail" }      
+      = link_to "Quero ver o email", "#", data: { "reveal-id" => "poke_rodrigo_janot_mail" }
     #poke_rodrigo_janot_mail.reveal-modal.medium data={reveal: true}
+      p
+        strong Assunto:
+        |  Procurador Janot, dê parecer favorável à ADPF 289
       = render partial: "share/poke_rodrigo_janot_mail"
       a.close-reveal-modal &#215;

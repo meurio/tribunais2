@@ -7,7 +7,7 @@
             span.digit= c
         .counter-text
           span
-            | Pessoas pedindo a
+            | Ações pela
             br
             | desmilitarização da justiça
 
@@ -17,17 +17,17 @@
     .title
       h2 Você sabia que no Brasil você ainda pode ser julgado por um tribunal militar?
     .text
-      p Apesar de vivermos em uma democracia,  qualquer cidadão civil pode virar reú da justiça militar, caso seja acusado de desacato ou outras formas de insubordinação contra membros das Forças Armadas.
-      p A boa notícia é que a Procuradoria Geral da República acaba de entrar com uma ação no Supremo Tribunal Federal para acabar com esse absurdo. E o voto do STF deve ocorrer ainda esse ano!
-      p Mas sabemos que os militares não querem abrir mão de seus privilégios, e já estão se movimentando para tentar influenciar os ministros do STF na semana do voto. É por isso que estamos unindo pessoas dispostas a orquestrar um contra-ataque.
+      p Apesar de vivermos em uma democracia, qualquer civil pode virar réu da justiça militar caso seja acusado de desacato ou outras formas de insubordinação contra membros das Forças Armadas.
+      p A boa notícia é que a Procuradoria Geral da República entrou com uma ação no Supremo Tribunal Federal para acabar com esse absurdo e o voto do STF deve ocorrer ainda esse ano!
+      p Sabemos que os militares não querem abrir mão de privilégios e já estão se articulando para pressionar os ministros do STF. É por isso que estamos unindo pessoas dispostas a orquestrar um contra-ataque.
       p
-        | Juntos, vamos criar a maior mobilização pela desmilitarização da justiça que o Brasil já viu. Mobilizadores inscritos receberão um email com o plano da missão para pressionar os ministros do STF nas ruas e nas redes até a semana do voto. Venha fazer história junto com a gente!
-        span.hash  #DesmilitarizaçãodaJustiça
+        strong A primeira missão é enviar um email para o relator do processo no STF, ministro Gilmar Mendes, já que sua opinião influenciará o voto dos outros ministros.
+        |  Se milhares de pessoas pressionarem agora, ele saberá que não descansaremos até que civis não sejam mais julgados por militares. Adicione sua voz à mobilização pela desmilitarização da justiça, enviando um email automático através do formulário abaixo.
 
   - if current_user.nil?
     .row
       .form-links
-        = link_to "Já participa da missão? Clique aqui", "#", id: 'login-link', data: { "reveal-id" => "login" }
+        span.form-link= link_to "Já participa da missão? Clique aqui", "#", id: 'login-link', data: { "reveal-id" => "login" }
         #login.reveal-modal.small.login data={reveal: true}
           p Insira seu email abaixo para continuar participando das missões:
           = form_tag("/", data: {abide: true}, method: :get) do
@@ -36,6 +36,7 @@
             small.error O email é obrigatório
             = submit_tag("Entrar", class: ["button", "radius"], id: :login_button)
           a.close-reveal-modal &#215;
+        span.form-link= link_to "Quero ver o email", "#", data: { "reveal-id" => "poke_gilmar_mendes_mail" }
 
     .form_wraper
       .row
@@ -49,7 +50,7 @@
               .email_field
                 = user_form.email_field(:email, placeholder: 'Insira seu email', required: true, id: :user_email)
               .submit_button
-                = user_form.submit "Inscreva-se", id: 'poke-submit-button', class: [:button, :radius]
+                = user_form.submit "Enviar email", id: 'poke-submit-button', class: [:button, :radius]
 
   .row
     .divider= image_tag("divider-dark.png")
