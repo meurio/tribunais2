@@ -10,7 +10,7 @@
     - if @current_task.present?
       - if @current_user.present?
         .accomplished-mission
-          | #{@current_user.first_name}, missão #{@current_task.position - 1} concluída com sucesso! (Não é #{@current_user.first_name}? #{link_to("Clique aqui", logout_path)})
+          | #{@current_user.first_name}, missão #{@current_task.position - 1} concluída com sucesso! (Não é #{@current_user.first_name}? #{link_to("Clique aqui", logout_path, id: "logout-link")})
       = render partial: @current_task.slug
     - else
       .congrats
