@@ -1,0 +1,16 @@
+.task#poke_carlos_zarattini
+  .briefing
+    .mission-type.icon-mail2
+      span= @current_task.mission
+    h2= @current_task.name
+    p= @current_task.description
+  = form_for [@current_task, @task_accomplishment], data: { abide: true } do |f|
+    .submit-field
+      = f.submit "Enviar email", id: :poke_carlos_zarattini_button, class: [:button, :radius, :large]
+      = link_to "Quero ver o email", "#", data: { "reveal-id" => "poke_carlos_zarattini_mail" }
+    #poke_carlos_zarattini_mail.reveal-modal.medium data={reveal: true}
+      p
+        strong Assunto:
+        |  Deputado Zarattini, não permita o julgamento de civis por tribunais militares
+      = render partial: "share/poke_carlos_zarattini_mail"
+      a.close-reveal-modal &#215;

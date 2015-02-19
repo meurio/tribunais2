@@ -25,6 +25,16 @@ class AppMailer < ActionMailer::Base
     )
   end
 
+  def poke_carlos_zarattini tasks_user
+    @user = tasks_user.user
+    headers "X-SMTPAPI" => "{ \"category\": [\"tribunais2\", \"poke_carlos_zarattini\"] }"
+    mail(
+      to: ENV['CARLOS_ZARATTINI_EMAIL'],
+      from: tasks_user.user.email,
+      subject: 'Deputado Zarattini, não permita o julgamento de civis por tribunais militares'
+    )
+  end
+
   def thanks task_accomplishment
     headers "X-SMTPAPI" => "{ \"category\": [\"tribunais2\", \"thanks\"] }"
     mail(

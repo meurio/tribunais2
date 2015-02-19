@@ -6,8 +6,11 @@ module ApplicationHelper
       classes << "accomplished" << "icon-checkmark"
     elsif task == current_task
       classes << "current" << "bubble"
-      
-      if task.slug == "poke_gilmar_mendes" || task.slug == "poke_rodrigo_janot"
+
+      if(
+        task.slug == "poke_gilmar_mendes" ||
+        task.slug == "poke_rodrigo_janot" ||
+        task.slug == "poke_carlos_zarattini")
         classes << "icon-mail2"
       elsif task.slug == "share_on_facebook"
         classes << "icon-facebook"

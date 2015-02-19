@@ -1,8 +1,11 @@
 class TaskAccomplishment < ActiveRecord::Base
-  after_create { self.delay.add_to_accounts_segment }
-  after_create { AppMailer.delay.poke_gilmar_mendes(self) if self.task.slug.to_sym == :poke_gilmar_mendes }
-  after_create { AppMailer.delay.thanks(self) if self.task.slug.to_sym == :poke_gilmar_mendes }
-  after_create { AppMailer.delay.poke_rodrigo_janot(self) if self.task.slug.to_sym == :poke_rodrigo_janot; }
+  after_create do
+    self.delay.add_to_accounts_segment
+    AppMailer.delay.poke_gilmar_mendes(self) if self.task.slug.to_sym == :poke_gilmar_mendes
+    AppMailer.delay.poke_rodrigo_janot(self) if self.task.slug.to_sym == :poke_rodrigo_janot;
+    AppMailer.delay.poke_carlos_zarattini(self) if self.task.slug.to_sym == :poke_carlos_zarattini
+    AppMailer.delay.thanks(self) if self.task.slug.to_sym == :poke_gilmar_mendes
+  end
 
   belongs_to :user
   belongs_to :task
