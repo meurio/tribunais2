@@ -1,20 +1,19 @@
 language: ruby
 rvm:
-  - 2.2.0
-
+- 2.2.0
 before_script:
-  - "cp config/database.sample.yml config/database.yml"
-  - "psql -c 'create role tribunais2 SUPERUSER LOGIN;' postgres"
-  - "psql -c 'create database tribunais2_test;' -U tribunais2 postgres"
-  - "bin/rake db:migrate RAILS_ENV=test"
-  - "sh -e /etc/init.d/xvfb start"
-
+- cp config/database.sample.yml config/database.yml
+- psql -c 'create role tribunais2 SUPERUSER LOGIN;' postgres
+- psql -c 'create database tribunais2_test;' -U tribunais2 postgres
+- bin/rake db:migrate RAILS_ENV=test
+- sh -e /etc/init.d/xvfb start
 env:
-  - DISPLAY=:99.0
-
+- DISPLAY=:99.0
 script:
-  - "bundle exec rspec spec && bundle exec cucumber"
-
+- bundle exec rspec spec && bundle exec cucumber
 branches:
   only:
-    - master
+  - master
+notifications:
+  slack:
+    secure: B9vLQ+ym8pquA9gOV9V5ZP3/QRVS2USmrb/yYCOqecTBLfuGGggbGb8xx31C5viC33Qq6DP3M/M/978fJexg0lpzhj0ALbMRj/9fwYPCVw4b4HgUeI92DTjhyeCdxMqxO+THoeV0v6vir242qJd9uT0U/1HTk6B5u5qGJqOK1CY=
