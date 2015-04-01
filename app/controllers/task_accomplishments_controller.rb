@@ -4,7 +4,12 @@ class TaskAccomplishmentsController < ApplicationController
 
     if user.nil?
       task_accomplishment_params[:user_attributes][:ip] = request.remote_ip
-      user = User.create task_accomplishment_params[:user_attributes]
+      user_params = task_accomplishment_params[:user_attributes]
+
+      user = User.create user_params.merge({
+        password: SecureRandom.hex,
+        memberships_attributes: [{organization_id: ENV['MEURIO_ORGANIZATION_ID']}]
+      })
     end
 
     @task_accomplishment = TaskAccomplishment.create user_id: user.id, task_id: params[:task_id]

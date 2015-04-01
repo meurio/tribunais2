@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+gem 'rails', '4.1.5'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -34,6 +34,7 @@ gem 'compass-rails'
 gem 'acts_as_list'
 gem 'newrelic_rpm'
 gem 'google-analytics-rails'
+gem 'acts_as_our_cities'
 
 # test
 group :development, :test do
