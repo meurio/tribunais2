@@ -8,7 +8,8 @@ class TaskAccomplishmentsController < ApplicationController
 
       user = User.create user_params.merge({
         password: SecureRandom.hex,
-        memberships_attributes: [{organization_id: ENV['MEURIO_ORGANIZATION_ID']}]
+        memberships_attributes: [{organization_id: ENV['MEURIO_ORGANIZATION_ID']}],
+        organization_id: Organization.find_by(slug: "meurio").try(:id)
       })
     end
 
